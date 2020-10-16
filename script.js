@@ -30,7 +30,31 @@ $container.addEventListener('click', function (event) {
   const value = event.target.closest('div').children[1].textContent
   // console.log(value)
 
-  if (value === '127789') {
-    console.log('success')
+  let name = ''
+
+  // if (value === '127789') {
+  //  name = 'Hotdog'
+  // } else if (value === '127790') {
+  //  name = 'Taco'
+  // }
+
+  switch (value) {
+    case '127789':
+      name = 'Hotdog'
+      break
+    case '127790':
+      name = 'Taco'
+      break
   }
+
+  document.getElementsById('preview').innerHTML = `
+<p styles= 'font-size:100px'>
+  &#${value};
+  </p>
+
+  <p>
+  ${name}
+  </p>
+  
+  `
 })
